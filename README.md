@@ -33,5 +33,3 @@ Technologies Used
 - **JavaScript (ES6)**: dynamic UI updates, events, localStorage, fake server  
 - **OpenStreetMap / static image map**: for offline compatibility  
 - **No backend required**: all features run on the client side  
-## 📁 Folder Structure
-
