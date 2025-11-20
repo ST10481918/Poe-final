@@ -31,5 +31,5 @@ Technologies Used
 - **HTML5**: semantic structure  
 - **CSS3**: external stylesheets, responsive layouts, Flexbox, Grid  
 - **JavaScript (ES6)**: dynamic UI updates, events, localStorage, fake server  
-- **OpenStreetMap / static image map**: for offline compatibility  
+- **Use localhost** for full offline compatibility  
 - **No backend required**: all features run on the client side  
