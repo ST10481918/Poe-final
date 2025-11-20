@@ -25,7 +25,7 @@ Interactive & Dynamic Elements
 - **Back-to-top button**  
 - **Automatic current year** in the footer  
 - **Fully simulated server responses** (forms work without a backend)  
-- **OpenStreetMap/static map fallback** for full offline compatibility  
+- **Use localhost** for full offline compatibility  
 
 Technologies Used
 - **HTML5**: semantic structure  
