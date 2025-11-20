@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Have a question or need a custom quote? Submit an enquiry for products, sponsorship, or volunteering opportunities at Visionary Prints.">
+  <meta name="keywords" content="product enquiries, volunteer enquiries, sponsorship enquiries, contact Visionary Prints, request quote">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enquiry — Visionary Prints</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+     <div class="logo">
+  <img src="Images/logo.jfif" alt="Visionary Prints Logo" class="logo-img">
+  <span class="logo-text">Visionary Prints</span>
+</div>
+
+      <nav aria-label="Main navigation">
+        <div class="hamburger" id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="links" id="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="enquiry.html" class="active">Enquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1 class="section-title">Make an Enquiry</h1>
+    <p class="muted">If you'd like to volunteer or sponsor our NPO projects, select the appropriate option below.</p>
+
+    <form id="enquiry-form" data-endpoint="/api/enquiry" aria-label="Enquiry form">
+      <div class="form-row two">
+        <label for="e-name">Name
+          <input id="e-name" name="name" type="text" required>
+        </label>
+
+        <label for="e-email">Email
+          <input id="e-email" name="email" type="email" required>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="e-type">Enquiry type
+          <select id="e-type" name="type" required>
+            <option value="">Select</option>
+            <option value="product">Product / Order</option>
+            <option value="sponsor">Sponsor</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="e-message">Message
+          <textarea id="e-message" name="message" rows="5" required></textarea>
+        </label>
+      </div>
+
+      <div id="formStatus" style="color:red; margin-top:8px;"></div>
+
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Visionary Prints • Call us: +27 123 456 7890</div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+  <script src="javascript.js" defer></script>
+</body>
+</html>

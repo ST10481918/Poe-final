@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Contact Visionary Prints for support, questions, or custom printing assistance. View our location and send us a message via the contact form.">
+  <meta name="keywords" content="contact Visionary Prints, customer support, print shop location, printing help, Johannesburg printing, South Africa print services">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Visionary Prints</title>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+  <div class="logo">
+  <img src="Images/logo.jfif" alt="Visionary Prints Logo" class="logo-img">
+  <span class="logo-text">Visionary Prints</span>
+</div>
+
+      <nav aria-label="Main navigation">
+        <div class="hamburger" id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="links" id="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+<main id="main" class="container">
+  <h1 class="section-title">Contact Us</h1>
+  <p class="muted">You can reach us at +27 123 456 7890 or hello@visionaryprints.co.za</p>
+
+  <h2 class="center">Our Pickup Point</h2>
+
+  <!-- Centered map wrapper -->
+  <div class="map-wrapper">
+    <div class="card">
+      <h3 class="center">Johannesburg</h3> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d223.47473754996318!2d28.19315794135155!3d-26.3395848367518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1762528026243!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="muted center">Visionary Prints, Johannesburg</p>
+    </div>
+  </div>
+
+  <h2 class="center mt-1">Contact Form</h2>
+  <form id="contact-form" data-endpoint="/api/contact" aria-label="Contact form">
+    <div class="form-row two">
+      <label for="cname">Name
+        <input id="cname" name="name" type="text" required>
+      </label>
+
+      <label for="cemail">Email
+        <input id="cemail" name="email" type="email" required>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label for="cmessage">Message
+        <textarea id="cmessage" name="message" rows="5" required></textarea>
+      </label>
+    </div>
+
+    <div id="formStatus" style="color:red; margin-top:8px;"></div>
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+</main>
+<footer> <div class="container">© <span id="year"></span> Visionary Prints • Call us: +27 123 456 7890</div>
+</footer> <button id="toTop" aria-label="Back to top">↑</button> 
+<script src="javascript.js" defer></script> 
+</body> 
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Review your cart, adjust quantities, and complete your order securely with Visionary Prints' simple and fast checkout process.">
+  <meta name="keywords" content="checkout, online shopping, cart, secure checkout, order summary, Visionary Prints checkout">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Visionary Prints</title>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+    <div class="logo">
+  <img src="Images/logo.jfif" alt="Visionary Prints Logo" class="logo-img">
+  <span class="logo-text">Visionary Prints</span>
+</div>
+      <nav aria-label="Main navigation">
+        <div class="hamburger" id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="links" id="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="checkout.html" class="active">Checkout</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1 class="section-title">Checkout</h1>
+    <p class="muted">Review your order, change quantities, or remove items before placing your order.</p>
+
+    <!-- Order summary table (rendered by JS) -->
+    <div id="order-summary">
+      <table class="cart-table" id="cart-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS populates rows here -->
+        </tbody>
+      </table>
+
+      <p><strong>Total: R<span id="cart-total">0.00</span></strong></p>
+    </div>
+
+    <!-- Checkout form (AJAX-submitted) -->
+    <form class="checkout-form" data-endpoint="/api/checkout" aria-label="Checkout form">
+      <h2>Billing & Shipping</h2>
+
+      <div class="form-row two">
+        <label for="name">Full name
+          <input id="name" name="name" type="text" required>
+        </label>
+
+        <label for="email">Email
+          <input id="email" name="email" type="email" required>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="address">Shipping address
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="payment">Payment method
+          <select id="payment" name="payment" required>
+            <option value="">-- Select --</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="formStatus" style="color:red; margin-top:8px;"></div>
+
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Visionary Prints • Call us: +27 123 456 7890</div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+  <script src="javascript.js" defer></script>
+</body>
+</html>

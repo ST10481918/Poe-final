@@ -1,0 +1,214 @@
+/* css/style.css
+   External stylesheet for Visionary Prints
+   Contains reset, variables, layout, typography, components and responsive rules.
+   Comments included for assignment readability.
+*/
+
+/* ---------- 1. RESET ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body, div, span, applet, object, iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strong,sub,sup,tt,var,
+b,u,i,center,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td { margin:0; padding:0; border:0; vertical-align:baseline; }
+ol,ul { list-style:none; }
+img { max-width:100%; height:auto; display:block; }
+button { font: inherit; cursor: pointer; }
+
+/* ---------- 2. VARIABLES & BASE ---------- */
+:root{
+  --brand:#5a2d82;
+  --brand-2:#8b5cc7;
+  --text:#171717;
+  --muted:#666;
+  --bg:#faf8ff;
+  --card:#fff;
+  --rounded:14px;
+  --container-max:1100px;
+  --gap:1rem;
+
+  --fs-base:16px;
+  --line-height:1.6;
+  --h1:clamp(2rem,5vw,3rem);
+  --h2:clamp(1.3rem,3.2vw,2rem);
+}
+
+html { font-size:var(--fs-base); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg, #fbf8ff 0%, #fff 100%);
+  line-height:var(--line-height);
+  transition: opacity .4s ease;
+  opacity: 0; /* fade in controlled by JS */
+}
+
+/* Add loaded class from JS to reveal page */
+body.loaded { opacity:1; }
+
+/* Container */
+.container{ width:min(var(--container-max), 92%); margin-inline:auto; padding-inline:.25rem; }
+
+/* Accessibility helper */
+.visually-hidden {
+  position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap;
+}
+
+/* ---------- 3. TYPOGRAPHY ---------- */
+h1 { font-size:var(--h1); line-height:1.05; margin-bottom:.6rem; color:#fff; }
+h2 { font-size:var(--h2); margin-bottom:.5rem; color:var(--brand); }
+h3, h4 { margin-bottom:.4rem; }
+p { margin-bottom:.75rem; color:var(--text); }
+.section-title { font-size:var(--h2); color:var(--brand); }
+
+/* Muted text */
+.muted { color:var(--muted); }
+
+/* ---------- 4. NAV / HEADER ---------- */
+header {
+  position:sticky; top:0; z-index:60;
+  background:rgba(255,255,255,0.98); backdrop-filter: blur(6px) saturate(140%);
+  border-bottom:1px solid #eee;
+}
+.nav { display:flex; align-items:center; justify-content:space-between; gap:var(--gap); padding:.9rem 0; }
+
+/* Logo */
+.logo-text {
+  font-weight: 800;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin-right: .45rem;
+  display: inline-block;
+}
+
+
+/* Links */
+.links { display:flex; gap:.4rem; align-items:center; }
+.links a { padding:.45rem .9rem; border-radius:999px; font-weight:600; color:inherit; text-decoration:none; }
+.links a:hover, .links a:focus { background:rgba(90,45,130,.06); transform:translateY(-1px); outline:none; }
+.links a.active { background:var(--brand); color:#fff; }
+
+/* Hamburger */
+.hamburger { display:none; flex-direction:column; gap:6px; cursor:pointer; }
+.hamburger span { width:26px; height:3px; background:var(--text); border-radius:2px; transition: transform .18s ease, opacity .18s ease; }
+
+/* open state for hamburger (transforms into X) */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform: scaleX(.2); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- 5. HERO ---------- */
+.hero { background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 60%, #bda6e8 100%); color:#fff; padding:4rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
+.hero-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:1.25rem; align-items:center; }
+.hero-card { background: rgba(255,255,255,.12); border-radius:18px; padding:1rem; border:1px solid rgba(255,255,255,.12); }
+.cta { display:inline-flex; align-items:center; gap:.6rem; background:#fff; color:var(--brand); padding:.85rem 1.2rem; border-radius:999px; font-weight:700; box-shadow:0 6px 16px rgba(0,0,0,.12); text-decoration:none; }
+
+/* ---------- 6. GRID & CARDS ---------- */
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.card { background:var(--card); border:1px solid #eee; border-radius:18px; padding:1rem; box-shadow:0 6px 18px rgba(0,0,0,.03); }
+.card h3 { margin-bottom:.4rem; }
+.center {
+  text-align: center;
+}
+
+/* Wrapper to center the map card */
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+/* Search Bar */
+.search-bar {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 8px rgba(90, 45, 130, 0.3);
+}
+
+/* Product grid */
+.product-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:1.25rem;
+}
+.product-card { background:var(--card); border:1px solid #eee; border-radius:12px; padding:1rem; text-align:center; transition:transform .16s ease, box-shadow .16s ease; }
+.product-card:hover { transform:translateY(-6px); box-shadow:0 14px 40px rgba(0,0,0,.06); }
+.product-card img { height:200px; object-fit:cover; border-radius:10px; margin-bottom:.6rem; }
+.product-card .price { font-weight:800; color:#222; margin-bottom:.45rem; }
+
+/* ---------- 7. FORMS ---------- */
+form { background:var(--card); padding:1rem; border-radius:12px; border:1px solid #eee; max-width:900px; }
+.form-row { display:grid; gap:.6rem; margin-bottom:.85rem; }
+.form-row.two { grid-template-columns:1fr 1fr; gap:1rem; }
+label { font-weight:600; display:block; color:var(--text); }
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  margin-top:.35rem; padding:.6rem .75rem; border-radius:8px; border:1px solid #ddd; width:100%; font-size:.95rem;
+}
+input:focus, textarea:focus, select:focus { outline:3px solid rgba(90,45,130,.12); border-color:var(--brand); }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; gap:.6rem; padding:.7rem 1rem; border-radius:999px; background:var(--brand); color:#fff; border:none; font-weight:700; cursor:pointer; }
+.btn:focus { outline:3px solid rgba(139,92,199,.12); }
+
+/* ---------- 8. CART TABLE ---------- */
+.cart-table { width:100%; border-collapse:collapse; margin-bottom:1rem; }
+.cart-table th, .cart-table td { padding:.6rem .5rem; border-bottom:1px solid #efefef; text-align:left; vertical-align:middle; }
+.cart-inline-qty { width:70px; }
+
+/* ---------- 9. TOASTS & ANIMATION ---------- */
+.toast {
+  position:fixed; right:20px; bottom:20px; min-width:260px; padding:12px 14px 12px 45px; border-radius:10px;
+  background:rgba(20,20,20,0.95); color:#fff; box-shadow:0 12px 30px rgba(0,0,0,.18); z-index:9999;
+  opacity:0; transform:translateY(20px) scale(.98); transition:opacity .28s ease, transform .28s ease; display:flex; align-items:center;
+}
+.toast.show { opacity:1; transform:translateY(0) scale(1); }
+.toast.success { background: rgba(46,204,113,0.95); }
+.toast.error { background: rgba(231,76,60,0.95); }
+.toast.info { background: rgba(52,152,219,0.95); }
+.toast::before { content: attr(data-icon); font-weight:bold; margin-right:10px; font-size:1.2rem; }
+
+/* ---------- 10. MOBILE / RESPONSIVE ---------- */
+@media (max-width:900px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  .grid { grid-template-columns:1fr; }
+  .hamburger { display:flex; }
+  /* sliding menu behaviour (hidden by default) */
+  .links { position:absolute; right:4%; top:66px; min-width:220px; background:#fff; border-radius:12px; padding:.6rem; box-shadow:0 10px 30px rgba(0,0,0,.08); flex-direction:column; align-items:flex-start; transform:translateX(200px); opacity:0; pointer-events:none; transition:transform .28s cubic-bezier(.2,.9,.3,1), opacity .22s ease; }
+  .links.open { transform:translateX(0); opacity:1; pointer-events:auto; }
+}
+
+/* accessible focus */
+a:focus, button:focus { outline-offset:3px; }
+
+/* small helpers */
+.center { text-align:center; }
+.mt-1 { margin-top:1rem; }

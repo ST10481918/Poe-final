@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Browse our custom printing products including T-shirts, Business Cards, Banner, Packaging, posters, tote bags, stickers, and notebooks. Affordable, high-quality, personalised items.">
+  <meta name="keywords" content="custom T-shirts, Business Cards, stickers, posters, tote bags, notebooks, print products, Banner, Packaging, custom merchandise South Africa">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Visionary Prints</title>
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+    <div class="logo">
+  <img src="Images/logo.jfif" alt="Visionary Prints Logo" class="logo-img">
+  <span class="logo-text">Visionary Prints</span>
+</div>
+      <nav aria-label="Main navigation">
+        <div class="hamburger" id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="links" id="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html" class="active">Products</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="enquiry.html">Enquiry</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Product Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="productSearch" placeholder="Search products…">
+  </div>
+  <p id="noResults" class="muted" style="display:none; text-align:center; margin-top:10px;">
+  No results found.
+  </p>
+    <h1 class="section-title">Our Products</h1>
+    <p class="muted">Browse our collection — add items to the cart.</p>
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="Images/download.jfif" alt="Custom T-Shirt">
+        <h3>Custom T-Shirt</h3>
+        <p class="price">R250</p>
+        <p>Premium cotton T-shirt with your choice of design.</p>
+        <label for="qty-tshirt">Qty:</label>
+        <input id="qty-tshirt" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="tshirt-001" data-name="Custom T-Shirt" data-price="250" data-qty="qty-tshirt">Add to Cart</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="Images/Contemporary Business Card Design with a Graffiti Twist _ by itsdjdesign.jfif" alt="business Card">
+        <h3>Business Card</h3>
+        <p class="price">R100</p>
+        <p>Set of 10 custom-printed Business Cards.</p>
+        <label for="qty-Business">Qty:</label>
+        <input id="qty-Business card" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="Card-001" data-name="Business card" data-price="100" data-qty="qty-Business">Add to Cart</button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="Images/Tote bag stussy , Reworked print.jfif" alt="Tote Bag">
+        <h3>Tote Bag</h3>
+        <p class="price">R150</p>
+        <p>Reusable canvas tote bag with stylish print.</p>
+        <label for="qty-tote">Qty:</label>
+        <input id="qty-tote" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="tote-001" data-name="Tote Bag" data-price="150" data-qty="qty-tote">Add to Cart</button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="Images/Nike shoes.jfif" alt="Poster Print">
+        <h3>Poster Print</h3>
+        <p class="price">R200</p>
+        <p>High-quality poster with vibrant colours.</p>
+        <label for="qty-poster">Qty:</label>
+        <input id="qty-poster" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="poster-001" data-name="Poster Print" data-price="200" data-qty="qty-poster">Add to Cart</button>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="Images/Silver Chrome Stars Sticker.jfif" alt="Sticker Pack">
+        <h3>Sticker Pack (10)</h3>
+        <p class="price">R60</p>
+        <p>Set of 10 custom-printed vinyl stickers.</p>
+        <label for="qty-stickers">Qty:</label>
+        <input id="qty-stickers" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="stickers-001" data-name="Sticker Pack" data-price="60" data-qty="qty-stickers">Add to Cart</button>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <img src="Images/anime stickers aesthetic _ stickers.jfif" alt="Custom Notebook">
+        <h3>Custom Notebook</h3>
+        <p class="price">R180</p>
+        <p>Spiral-bound notebook with your unique cover.</p>
+        <label for="qty-notebook">Qty:</label>
+        <input id="qty-notebook" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="notebook-001" data-name="Custom Notebook" data-price="180" data-qty="qty-notebook">Add to Cart</button>
+      </div>
+
+      <!-- Product 7 -->
+        <div class="product-card">
+          <img src="images/Corporate Roll Up Banner Preview.jfif" alt="Banner">
+          <h3>Banner</h3>
+          <p class="price">R450</p>
+          <p>High quality banner with vibrant colours using a custom design of your choice.</p>
+          <label for="qty-Banner">Qty:</label>
+        <input id="qty-Banner" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="Banner-001" data-name="Custom Banner" data-price="450" data-qty="qty-Banner">Add to Cart</button>
+        </div>
+
+      <!-- Product 8 -->
+        <div class="product-card">
+          <img src="images/7de3c917-39af-45d5-8839-128f01dabd59.jfif" alt="Packaging">
+          <h2>Packaging</h2>
+          <p class="price">R250</p>
+          <p>Quality cardboard packaging with vibrant colours using a custom design of your choice.</p>
+          <label for="qty-Packaging">Qty:</label>
+          <input id="qty-Packaging" type="number" min="1" value="1" />
+        <button class="btn add-to-cart" data-id="Packaging-001" data-name="Custom Packaging" data-price="250" data-qty="qty-Packaging">Add to Cart</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Visionary Prints • Call us: +27 123 456 7890</div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+  <script src="javascript.js" defer></script>
+</body>
+</html>

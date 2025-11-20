@@ -1,0 +1,9 @@
+REFERENCES:
+GITHUB
+CHATGPT
+W3SCHOOLS
+https://youtu.be/CQZxeoQeo5c?si=Ha1hApv6pm8ItwR-
+https://youtu.be/W6NZfCO5SIk?si=icF6oYlEPRHi0lgT
+Sitemap & SEO Basics:
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+https://youtu.be/9z8FP8ear2Y?si=1guN6uBnC5hWjboP
